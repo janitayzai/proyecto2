@@ -1,6 +1,4 @@
-/* ==========================================
-   Estilos Generales
-   ========================================== */
+/* Estilos Generales */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -11,9 +9,7 @@ body {
 }
 
 
-/* ==========================================
-   Encabezado (Header)
-   ========================================== */
+/* Encabezado (Header) */
 header {
     background-color: #0b4f6c;
     color: #ffffff;
@@ -35,9 +31,9 @@ header p, header h3 {
     font-size: 1.1rem;
     font-weight: 300;
 }
-/* ==========================================
-   Navegación (Nav)
-   ========================================== */
+
+
+  /* Navegación (Nav) */
 nav {
     background-color: #00a896;
     padding: 10px;
@@ -68,9 +64,7 @@ nav ul li a:hover {
     color: #e0f6f6;
 }
 
-/* ==========================================
-   Contenido Principal y Tarjetas
-   ========================================== */
+/* Contenido Principal y Tarjetas */
 main {
     padding: 20px;
     max-width: 800px;
@@ -109,9 +103,7 @@ p {
     margin-bottom: 15px;
 }
 
-/* ==========================================
-   Imágenes y Figuras
-   ========================================== */
+/* Imágenes y Figuras */
 img {
     max-width: 100%;
     height: auto;
@@ -132,9 +124,7 @@ figcaption {
     font-style: italic;
 }
 
-/* ==========================================
-   Pie de Página (Footer)
-   ========================================== */
+/* Pie de Página (Footer) */
 footer {
     background-color: #0b4f6c;
     color: #ffffff;
@@ -149,4 +139,21 @@ footer p {
     color: #ffffff;
     margin: 0;
     font-size: 0.95rem;
+}
+/*Trivia*/
+button:hover {
+    background-color: #8c3044;
+    transform: scale(1.02);
+}
+
+.feedback {
+    font-weight: bold;
+    margin-top: 8px;
+    display: block;
+}
+
+#resultadoFinal {
+    text-align: center;
+    margin-top: 25px;
+    color: #6b1e2e;
 }
