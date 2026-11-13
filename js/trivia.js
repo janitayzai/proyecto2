@@ -1,119 +1,47 @@
 const boton = document.getElementById("comprobar");
-
-boton.addEventListener("click", function() {
+document.getElementById("comprobar").addEventListener("click", function() {
     let puntaje = 0;
-
-    
-    let p1 = document.getElementById("p1");
-    if (document.getElementById("b").checked) {
-        p1.innerHTML = "¡Correcto!";
-        p1.style.color = "green";
-        puntaje++;
-    } else {
-        p1.innerHTML = "Incorrecto. En Montecalvo Irpino, por un hermano fallecido.";
-        p1.style.color = "red";
+    let p1 = document.querySelector('input[name="p1"]:checked');
+    let p2 = document.querySelector('input[name="p2"]:checked');
+    let p3 = document.querySelector('input[name="p3"]:checked');
+    let p4 = document.querySelector('input[name="p4"]:checked');
+    let p5 = document.querySelector('input[name="p5"]:checked');
+    let p6 = document.querySelector('input[name="p6"]:checked');
+    let p7 = document.querySelector('input[name="p7"]:checked');
+    let p8 = document.querySelector('input[name="p8"]:checked');
+    let p9 = document.querySelector('input[name="p9"]:checked');
+    let p10 = document.querySelector('input[name="p10"]:checked');
+    if (!p1 || !p2 || !p3 || !p4 || !p5 || !p6 || !p7 || !p8 || !p9 || !p10) {
+    document.getElementById("resultado").innerHTML =
+    "Debes responder las diez preguntas.";
+    return;
     }
-
-    
-    let p2 = document.getElementById("p2");
-    if (document.getElementById("c").checked) {
-        p2.innerHTML = "¡Correcto!";
-        p2.style.color = "green";
-        puntaje++;
+    // Respuestas correctas
+    if (p1.value === "b") puntaje++;
+    if (p2.value === "c") puntaje++;
+    if (p3.value === "b") puntaje++;
+    if (p4.value === "c") puntaje++;
+    if (p5.value === "a") puntaje++;
+    if (p6.value === "a") puntaje++;
+    if (p7.value === "c") puntaje++;
+    if (p8.value === "b") puntaje++;
+    if (p9.value === "c") puntaje++;
+    if (p10.value === "a") puntaje++;
+    let mensaje = "<h3>Resultado: " + puntaje + "/10 puntos</h3>";
+    if (puntaje === 10) {
+    mensaje += "¡Felicitaciones! Has respondido correctamente todas las preguntas.";
+    } else if (puntaje >= 6) {
+    mensaje += "¡Bien hecho! Has respondido bien la mayoría.";
     } else {
-        p2.innerHTML = "Incorrecto. A los 24 años.";
-        p2.style.color = "red";
+    mensaje += "Te invito a intentarlo nuevamente.";
     }
-
-    
-    let p3 = document.getElementById("p3");
-    if (document.getElementById("b").checked) {
-        p3.innerHTML = "¡Correcto!";
-        p3.style.color = "green";
-        puntaje++;
-    } else {
-        p3.innerHTML = "Incorrecto. Una forma de servir a los demás y contribuir a su formación humana y espiritual.";
-        p3.style.color = "red";
+    document.getElementById("resultado").innerHTML = mensaje;
+    });
+    document.getElementById("reiniciar").addEventListener("click", function() {
+    let opciones = document.querySelectorAll('input[type="radio"]');
+    for (let opcion of opciones) {
+    opcion.checked = false;
     }
+    document.getElementById("resultado").innerHTML = "";
+    });
 
-    
-    let p4 = document.getElementById("p4");
-    if (document.getElementById("c").checked) {
-        p4.innerHTML = "¡Correcto!";
-        p4.style.color = "green";
-        puntaje++;
-    } else {
-        p4.innerHTML = "Incorrecto. Compartió su propia comida con quienes no tenían.";
-        p4.style.color = "red";
-    }
-
-    
-    let p5 = document.getElementById("p5");
-    if (document.getElementById("a").checked) {
-        p5.innerHTML = "¡Correcto!";
-        p5.style.color = "green";
-        puntaje++;
-    } else {
-        p5.innerHTML = "Incorrecto. Humildad y caridad.";
-        p5.style.color = "red";
-    }
-
-    
-    let p6 = document.getElementById("p6");
-    if (document.getElementById("a").checked) {
-        p6.innerHTML = "¡Correcto!";
-        p6.style.color = "green";
-        puntaje++;
-    } else {
-        p6.innerHTML = "Incorrecto. Por Jesús y la Virgen María.";
-        p6.style.color = "red";
-    }
-
-    
-    let p7 = document.getElementById("p7");
-    if (document.getElementById("c").checked) {
-        p7.innerHTML = "¡Correcto!";
-        p7.style.color = "green";
-        puntaje++;
-    } else {
-        p7.innerHTML = "Incorrecto. En la educación y formación integral de los jóvenes.";
-        p7.style.color = "red";
-    }
-
-    
-    let p8 = document.getElementById("p8");
-    if (document.getElementById("b").checked) {
-        p8.innerHTML = "¡Correcto!";
-        p8.style.color = "green";
-        puntaje++;
-    } else {
-        p8.innerHTML = "Incorrecto. Salud frágil, críticas y expulsiones por su predicación.";
-        p8.style.color = "red";
-    }
-
-    
-    let p9 = document.getElementById("p9");
-    if (document.getElementById("c").checked) {
-        p9.innerHTML = "¡Correcto!";
-        p9.style.color = "green";
-        puntaje++;
-    } else {
-        p9.innerHTML = "Incorrecto. Humildad, generosidad, solidaridad, perseverancia, y fe.";
-        p9.style.color = "red";
-    }
-
-    
-    let p10 = document.getElementById("p10");
-    if (document.getElementById("a").checked) {
-        p10.innerHTML = "¡Correcto!";
-        p10.style.color = "green";
-        puntaje++;
-    } else {
-        p10.innerHTML = "Incorrecto. El 15 de julio de 1766.";
-        p10.style.color = "red";
-    }
-
-    // Resultado final
-    let resultadoFinal = document.getElementById("resultado");
-    resultadoFinal.innerHTML = "Obtuviste " + puntaje + " de 10 respuestas correctas.";
-});
